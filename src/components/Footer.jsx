@@ -4,7 +4,7 @@ const Footer = () => {
     return (
         <div className=" bg-gray-950 flex " style={{height: 'calc(100vh - 100px)'}}>
             <div className=" basis-1/3 relative">
-                <Image fill src='/../public/images/bg.png'/>
+                <Image fill src='/../public/images/bg.png' alt="restaurant image"/>
             </div>
             <div className=" basis-2/3 relative flex p-12 justify-between">
                 <div className=" flex-1 pl-0 pr-5 text-3xl text-gray-500">

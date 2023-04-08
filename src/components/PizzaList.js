@@ -17,7 +17,7 @@ const PizzaList = ({pizzaList}) => {
             
             <div className=" flex flex-wrap w-full">
                 {pizzaList.map((pizza)=>{
-                    <PizzaCard key={pizza.id} pizza={pizza}/>
+                    return <PizzaCard key={pizza._id} pizza={pizza}/>
                 })}
                 
             </div>

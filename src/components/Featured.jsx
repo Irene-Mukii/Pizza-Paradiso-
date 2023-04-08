@@ -19,7 +19,7 @@ import { useState } from "react";
         <div className=" flex bg-orange-600 m-0 w-screen overflow-hidden h-screen p-0 
         "> 
             <div className=" top-0 bottom-0 m-auto absolute h-1/5 left-0 z-10" style={{width: '10%'}} onClick={()=>handleArrow('l')}>
-            <Image src='/../public/images/arrowl.png' className=" hover:cursor-pointer" fill style={{objectFit: 'contain'}} ></Image>
+            <Image src='/../public/images/arrowl.png' alt="arrow left image" className=" hover:cursor-pointer" fill style={{objectFit: 'contain'}} ></Image>
             </div>
             
             {/* image styles wrapper */}
@@ -28,13 +28,13 @@ import { useState } from "react";
                     
                         {images.map((img, i)=> (
                             <div className=" relative w-screen h-full" key={i}>
-                            <Image src={img}  fill style={{objectFit: 'contain'}} className=" rounded-md" ></Image>
+                            <Image src={img}  fill style={{objectFit: 'contain'}} className=" rounded-md" alt="pizzas on offer" ></Image>
                             </div>
                         ))}
                     
                 </div>
             <div className=" top-0 bottom-0 m-auto absolute h-1/5 right-0" style={{width: '10%'}} onClick={()=>handleArrow('r')}>
-            <Image src='/../public/images/arrowr.png' className=" hover:cursor-pointer " fill style={{objectFit: 'contain'}}/>
+            <Image src='/../public/images/arrowr.png' className=" hover:cursor-pointer " alt="arrow right" fill style={{objectFit: 'contain'}}/>
             </div>
         </div>
     )

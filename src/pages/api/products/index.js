@@ -5,12 +5,12 @@ export default async function handler(req, res) {
     
     const { method } = req;
     console.log(method)
-    dbConnect()
+    await dbConnect()
 
     if (method==='GET'){
         try {
             const products = await Product.find();
-            return  res.status(200).json(products);
+            res.status(200).json(products);
         }catch(err){
             return res.status(500).json(err)
         }
@@ -18,9 +18,9 @@ export default async function handler(req, res) {
     if(method==='POST'){
         try{
             const product = await Product.create(req.body)
-            return res.status(200).json(product)
+            res.status(200).json(product)
         }catch(err){
-            return res.status(500).json(err)
+            res.status(500).json(err)
         }
     }
     if(method==='PUT'){
@@ -31,4 +31,4 @@ export default async function handler(req, res) {
         }
     }
 
-  }
+  };

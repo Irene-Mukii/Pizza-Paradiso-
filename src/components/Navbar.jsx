@@ -12,7 +12,7 @@ export default function Navbar () {
       {/* //container item Call btn */}
       <div className='flex items-center'>
         <div className=' rounded-full bg-white p-2 hover:cursor-pointer'>
-          <Image src='/../public/images/telephone.png'  width={32} height={32}></Image>
+          <Image src='/../public/images/telephone.png' alt='call us image' width={32} height={32}></Image>
         </div>
         <div className=' ml-5 text-white'>
           <p>ORDER NOW</p>
@@ -26,7 +26,7 @@ export default function Navbar () {
           <li className=' m-5'>Homepage</li>
           <li className=' m-5'>Products</li>
           <li className=' m-5'>Menu</li>
-          <Image src='/../public/images/logo.png' className=' rounded-sm p-0 m-0' width={100} height={100}/>
+          <Image src='/../public/images/logo.png' alt='restaurant logo' className=' rounded-sm p-0 m-0' width={100} height={100}/>
           <li className=' m-5'>Events</li>
           <li className=' m-5'>Contact</li>
         </ul>
@@ -34,7 +34,7 @@ export default function Navbar () {
       {/* //container cart item */}
       <div className=' relative justify-end'>
         <div>
-          <Image src='/../public/images/cart.png' width={30} height={30}/>
+          <Image src='/../public/images/cart.png' alt='cart image' width={30} height={30}/>
           <div className='flex w-5 h-5 absolute -top-3 -right-3 bg-white text-orange-600 font-bold items-center justify-center rounded-full p-1'>2</div>
         </div>
       </div>
