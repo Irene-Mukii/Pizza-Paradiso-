@@ -1,6 +1,6 @@
 import PizzaCard from "./PizzaCard";
 
-const PizzaList = () => {
+const PizzaList = ({pizzaList}) => {
     return (
         <div className="flex flex-col items-center p-5 justify-center">
             
@@ -16,12 +16,10 @@ const PizzaList = () => {
             </p>
             
             <div className=" flex flex-wrap w-full">
-                <PizzaCard/>
-                <PizzaCard/>
-                <PizzaCard/>
-                <PizzaCard/>
-                <PizzaCard/>
-                <PizzaCard/>
+                {pizzaList.map((pizza)=>{
+                    <PizzaCard key={pizza.id} pizza={pizza}/>
+                })}
+                
             </div>
         </div>
     )
