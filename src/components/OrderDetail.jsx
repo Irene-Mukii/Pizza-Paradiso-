@@ -5,6 +5,7 @@ const OrderDetail = ({total, createOrder}) => {
     const [address, setAddress] = useState('')
 
     const handleClick = () => {
+        console.log(customer, address, total)
         createOrder({
             customer, address, total, method: 0
         })
