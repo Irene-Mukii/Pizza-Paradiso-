@@ -7,8 +7,8 @@ const handler = (req, res)=>{
         const {username, password} = req.body;
         
         console.log(username,password)
-        if(username === process.env.ADMIN_USERNAME && password === process.env.ADMIN_PASSWORD){
-            res.setHeader('Set-Cookie',cookie.serialize('token', process.env.TOKEN, {
+        if(username === process.env.NEXTADMIN_USERNAME && password === process.env.NEXTADMIN_PASSWORD){
+            res.setHeader('Set-Cookie',cookie.serialize('token', process.env.NEXTTOKEN, {
                 maxAge: 60 * 60,
                 sameSite: 'strict',
                 path: '/'
