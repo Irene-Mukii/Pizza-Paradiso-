@@ -10,7 +10,8 @@ const Login = ()=>{
 
     const handleClick = async () => {
         try{
-            console.log({username,password})
+            console.log({username,password}, process.env.NEXT_URL +'api/login')
+
             await axios.post(process.env.NEXT_URL +'api/login', { username, password})
             router.push('/admin')
         }catch(err){
