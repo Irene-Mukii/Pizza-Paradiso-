@@ -1,23 +1,28 @@
 import Image from "next/image";
 import axios from "axios";
-import { use, useState } from "react";
+import {  useState } from "react";
+import { useDispatch } from "react-redux";
+import { addProduct } from "redux/cartSlice";
+
 
 const Product = ({pizza}) => {
 
     const [size, setSize] = useState(0);
     const [price, setPrice] = useState(pizza.prices[0]);
-    const [quantity, setQuantity] = useState(1)
+    const [quantity, setQuantity] = useState(1);
     const [extras, setExtras] = useState([]);
+
+    const dispatch = useDispatch();
 
     const changePrice = (number) => {
         setPrice(price+number);
-    }
+    };
 
     const handleSize = (sizeIndex)=>{
         const difference = pizza.prices[sizeIndex] - pizza.prices[size];
         setSize(sizeIndex);
         changePrice(difference)
-    }
+    };
 
     const handleChange = (e,option)=>{
         const checked = e.target.checked;
@@ -29,6 +34,10 @@ const Product = ({pizza}) => {
             changePrice(-option.price);
             setExtras(extras.filter(extra => extra.id !== option._id));
         }
+    };
+
+    const handleClick = () => {
+        dispatch(addProduct({...pizza,extras,price,quantity}))
     }
 
     return (
@@ -82,7 +91,10 @@ const Product = ({pizza}) => {
                         defaultValue={1} 
                         className="w-14 h-8 border border-solid"
                         onChange={(e)=> setQuantity(e.target.value)}/>
-                        <button className=" ml-3 h-8 bg-orange-600 text-white cursor-pointer border-none ">Add to Cart</button>
+                        <button 
+                            className=" ml-3 h-8 bg-orange-600 text-white cursor-pointer border-none "
+                            onClick={handleClick}>
+                                Add to Cart</button>
                     </div>
             </div>
 

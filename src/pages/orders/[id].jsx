@@ -1,8 +1,9 @@
 import Image from "next/image";
 import styles from '@/styles/Order.module.css'
+import axios from "axios";
 
-const Order = () => {
-    const status = 0;
+const Order = ({order}) => {
+    const status = order.status;
     const statusClass = (index) => {
         if (index-status < 1) return styles.done
         if (index-status === 1) return styles.inProgress
@@ -22,16 +23,16 @@ const Order = () => {
                         </tr>
                         <tr className=" pb-5 flex justify-between items-center">
                             <td>
-                                <span> 1234578945</span>
+                                <span> {order._id}</span>
                             </td>
                             <td >
-                                <span className=" font-medium text-orange-600 text-2xl">John Doe</span>
+                                <span className=" font-medium text-orange-600 text-2xl">{order.customer}</span>
                             </td>
                             <td>
-                                <span> River road st. 123</span>
+                                <span> {order.address}</span>
                             </td>
                             <td>
-                                <span className=" font-medium text-xl"> ksh 3980</span>
+                                <span className=" font-medium text-xl">$ {order.total}</span>
                             </td>
                         </tr>
                     </tbody>
@@ -77,13 +78,13 @@ const Order = () => {
                 <div className=" max-h-72 w-5/6 bg-gray-700 p-12 pt-3 flex flex-col justify-between text-white">
                         <h2>CART TOTAL</h2>
                         <div className=" mr-2">
-                            <b>Subtotal:  </b>ksh 7,960
+                            <b>Subtotal:  </b>$ {order.total}
                         </div>
                         <div className=" mr-2">
-                            <b>Discount: </b>ksh 0
+                            <b>Discount: </b>$ 0
                         </div>
                         <div className=" mr-2">
-                            <b>Total: </b>ksh 7,960
+                            <b>Total: </b>$ {order.total}
                         </div>
                         <button disabled className=" h-7 text-teal-500 font-bold cursor-not-allowed bg-white mt-5">PAID</button>
                 </div>
@@ -91,5 +92,14 @@ const Order = () => {
         </div>
     )
 };
+export const getServerSideProps = async ({params}) => {
+    console.log(params)
+    const res = await axios.get(`http://localhost:3000/api/orders/${params.id}`);
+    return {
+      props: {
+        order: res.data
+      },
+    };
+  };
 
 export default Order;
