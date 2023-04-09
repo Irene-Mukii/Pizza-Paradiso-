@@ -19,7 +19,7 @@ import { useState } from "react";
         <div className=" flex bg-orange-600 m-0 w-screen overflow-hidden h-screen p-0 
         "> 
             <div className=" top-0 bottom-0 m-auto absolute h-1/5 left-0 z-10" style={{width: '10%'}} onClick={()=>handleArrow('l')}>
-            <Image src='/https://res.cloudinary.com/dgiocioqk/image/upload/v1681038036/arrowl_usxtku.png' alt="arrow left image" className=" hover:cursor-pointer" fill style={{objectFit: 'contain'}} ></Image>
+            <Image src='https://res.cloudinary.com/dgiocioqk/image/upload/v1681038036/arrowl_usxtku.png' alt="arrow left image" className=" hover:cursor-pointer" fill style={{objectFit: 'contain'}} ></Image>
             </div>
             
             {/* image styles wrapper */}
