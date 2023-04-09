@@ -55,17 +55,17 @@ const Product = ({pizza}) => {
                 <div className=" flex justify-between w-2/5">
                     <div className=" w-10 h-10 relative cursor-pointer"
                          onClick={()=>handleSize(0)}>
-                        <Image src='/../public/images/size.png' alt="small pizza size"fill style={{objectFit: 'contain'}}/>
+                        <Image src='https://res.cloudinary.com/dgiocioqk/image/upload/v1681038219/size_gl7c0i.png' alt="small pizza size"fill style={{objectFit: 'contain'}}/>
                         <span className="absolute -top-2 -right-5 bg-teal-700 text-white text-xs  rounded-xl px-1 ">Small</span>
                     </div>
                     <div className=" w-12 h-12 relative cursor-pointer"
                          onClick={()=>handleSize(1)}>
-                        <Image src='/../public/images/size.png' alt="medium pizza size"fill style={{objectFit: 'contain'}}/>
+                        <Image src='https://res.cloudinary.com/dgiocioqk/image/upload/v1681038219/size_gl7c0i.png' alt="medium pizza size"fill style={{objectFit: 'contain'}}/>
                         <span className="absolute -top-2 -right-5 bg-teal-700 text-white text-xs  rounded-xl px-1 ">Medium</span>
                     </div>
                     <div className=" w-14 h-14 relative cursor-pointer"
                          onClick={()=>handleSize(2)}>
-                        <Image src='/../public/images/size.png' alt="large pizza size"fill style={{objectFit: 'contain'}}/>
+                        <Image src='https://res.cloudinary.com/dgiocioqk/image/upload/v1681038219/size_gl7c0i.png' alt="large pizza size"fill style={{objectFit: 'contain'}}/>
                         <span className="absolute -top-2 -right-5 bg-teal-700 text-white text-xs  rounded-xl px-1 ">Large</span>
                     </div>
                 </div>

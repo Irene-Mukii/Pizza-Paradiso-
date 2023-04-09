@@ -6,8 +6,8 @@ import { useState } from "react";
 
     const [index, setIndex] = useState(0);
     const images = [
-        '/../public/images/featured.png',
-        '/../public/images/featured1.png',
+        'https://res.cloudinary.com/dgiocioqk/image/upload/v1681038105/featured_xbkajp.png',
+        'https://res.cloudinary.com/dgiocioqk/image/upload/v1681038112/featured1_tdz6gu.png',
         
     ];
     const handleArrow = (direction) => {
@@ -19,7 +19,7 @@ import { useState } from "react";
         <div className=" flex bg-orange-600 m-0 w-screen overflow-hidden h-screen p-0 
         "> 
             <div className=" top-0 bottom-0 m-auto absolute h-1/5 left-0 z-10" style={{width: '10%'}} onClick={()=>handleArrow('l')}>
-            <Image src='/../public/images/arrowl.png' alt="arrow left image" className=" hover:cursor-pointer" fill style={{objectFit: 'contain'}} ></Image>
+            <Image src='/https://res.cloudinary.com/dgiocioqk/image/upload/v1681038036/arrowl_usxtku.png' alt="arrow left image" className=" hover:cursor-pointer" fill style={{objectFit: 'contain'}} ></Image>
             </div>
             
             {/* image styles wrapper */}
@@ -34,7 +34,7 @@ import { useState } from "react";
                     
                 </div>
             <div className=" top-0 bottom-0 m-auto absolute h-1/5 right-0" style={{width: '10%'}} onClick={()=>handleArrow('r')}>
-            <Image src='/../public/images/arrowr.png' className=" hover:cursor-pointer " alt="arrow right" fill style={{objectFit: 'contain'}}/>
+            <Image src='https://res.cloudinary.com/dgiocioqk/image/upload/v1681038048/arrowr_g0id1p.png' className=" hover:cursor-pointer " alt="arrow right" fill style={{objectFit: 'contain'}}/>
             </div>
         </div>
     )

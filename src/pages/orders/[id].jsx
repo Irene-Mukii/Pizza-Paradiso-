@@ -41,31 +41,31 @@ const Order = ({order}) => {
 
                 <div className=" flex flex-row justify-around"> 
                     <div className={statusClass(0)}>
-                        <Image src='/../public/images/paid.png' width={30} height={30}/>
+                        <Image src='https://res.cloudinary.com/dgiocioqk/image/upload/v1681038107/paid_mgzjyf.png' width={30} height={30}/>
                         <span>Payment</span>
                         <div >
-                            <Image src="/../public/images/checked.png" width={20} height={20}/>
+                            <Image src="https://res.cloudinary.com/dgiocioqk/image/upload/v1681038077/checked_wr8led.png" width={20} height={20}/>
                         </div>
                     </div>
                     <div className={statusClass(1)}>
-                        <Image src='/../public/images/bake.png' width={30} height={30}/>
+                        <Image src='https://res.cloudinary.com/dgiocioqk/image/upload/v1681038053/bake_ola6m1.png' width={30} height={30}/>
                         <span>Preparing</span>
                         <div>
-                            <Image src="/../public/images/checked.png" width={20} height={20}/>
+                            <Image src="https://res.cloudinary.com/dgiocioqk/image/upload/v1681038077/checked_wr8led.png" width={20} height={20}/>
                         </div>
                     </div>
                     <div className={statusClass(2)}>
-                        <Image src='/../public/images/bike.png' width={30} height={30}/>
+                        <Image src='https://res.cloudinary.com/dgiocioqk/image/upload/v1681038066/bike_nqae4i.png' width={30} height={30}/>
                         <span>On the way</span>
                         <div>
-                            <Image src="/../public/images/checked.png" width={20} height={20}/>
+                            <Image src="https://res.cloudinary.com/dgiocioqk/image/upload/v1681038077/checked_wr8led.png" width={20} height={20}/>
                         </div>
                     </div>
                     <div className={statusClass(3)}>
-                        <Image src='/../public/images/delivered.png' width={30} height={30}/>
+                        <Image src='https://res.cloudinary.com/dgiocioqk/image/upload/v1681038081/delivered_q0ladm.png' width={30} height={30}/>
                         <span>Delivered</span>
                         <div>
-                            <Image src="/../public/images/checked.png" width={20} height={20}/>
+                            <Image src="https://res.cloudinary.com/dgiocioqk/image/upload/v1681038077/checked_wr8led.png" width={20} height={20}/>
                         </div>
                     </div>
                 </div>
