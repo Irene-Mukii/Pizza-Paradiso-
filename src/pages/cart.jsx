@@ -29,7 +29,7 @@ export default function Cart () {
 
     const createOrder = async (data) => {
         try{             
-            const res = await axios.post('http://localhost:3000/api/orders', data)
+            const res = await axios.post(process.env.NEXT_URL+'api/orders', data)
             console.log(res)
             
             res.status && router.push('/orders/'+res.data._id)

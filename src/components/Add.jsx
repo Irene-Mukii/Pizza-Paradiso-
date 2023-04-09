@@ -38,7 +38,7 @@ const Add = ({setClose}) => {
             }
             console.log(newProduct)
 
-            await axios.post('http://localhost:3000/api/products', newProduct);
+            await axios.post(process.env.NEXT_URL+'api/products', newProduct);
             setClose(true)
         }catch(err){
             console.log(err)
