@@ -1,38 +1,78 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 📸 Image Gallery App
 
-## Getting Started
+## 📌 Overview  
+The **Pizza Paradisso** is a simple yet powerful web application that allows users to **custom order, pay and track their pizza orders** easily. Built using a **Mongo DB**, it ensures seamless data storage, real-time updates, and ADMIN authentication for **extra functionalities like deleting orders, moving order process up or down and updating menus**.
 
-First, run the development server:
+## ✨ Features  
+### ✅ User Features  
+- **Custom Pizza Ordering:** Users can select and customize pizzas before placing an order.  
+- **Secure Payment Integration:** Payments are handled via **PayPal** for a seamless checkout experience.  
+- **Real-Time Order Tracking:** Users can track their order status as it moves through different stages.  
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+### 🔑 Admin Features  
+- **Admin Authentication:** Simple **cookie-based authentication** for admins.  
+- **Order Management:** Admins can **delete orders**, **update order statuses**, and **reorder process steps**.  
+- **Menu Management:** Admins can **update pizza menus**, including adding and removing items.  
+
+## 🛠 Tech Stack  
+- **Frontend:** Next.js  
+- **Backend:** Next.js API routes  
+- **Database:** MongoDB  
+- **Authentication:** Cookie sessions (Admin login credentials stored in `.env`)  
+- **Payments:** PayPal integration  
+- **Image Storage:** Cloudinary API  
+
+## 🚀 Installation & Setup  
+
+### 1️⃣ Clone the repository  
+```sh
+git clone https://github.com/Irene-Mukii/pizza-paradisso.git
+cd pizza-paradisso
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2️⃣ Install dependencies
+```sh
+npm install
+```
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+### 3️⃣ Set up Environment Variables
+```sh
+MONGODB_URI=your_mongodb_connection_string
+NEXT_PUBLIC_CLOUDINARY_URL=your_cloudinary_api_url
+PAYPAL_CLIENT_ID=your_paypal_client_id
+ADMIN_USERNAME=your_admin_username
+ADMIN_PASSWORD=your_admin_password
+```
+  
+### 4️⃣ Run the application
+```sh
+npm run dev
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## 🎯 Usage
+### 🛒 User Workflow
+1. Browse & Customize: Select pizzas and customize order preferences.
+2. Place Order: Proceed to checkout and complete payment via PayPal.
+3. Track Order: View real-time order status updates.
+### 🔑 Admin Workflow
+1. Login: Access the Admin Panel using the credentials stored in .env.local.
+2. Manage Orders:
+- Move order status up or down in the process.
+- Delete orders if necessary.
+3. Manage Menu:
+- Update the menu by adding or removing pizzas.
+- Upload images via Cloudinary API integration.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+   
+## 🔮 Future Enhancements
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- Implement **user authentication & profiles** for personalized order history.
+- Add **mobile push notifications** for real-time order updates.
+- Improve **UI/UX with dynamic animations and themes**
+  
+## 📜 License
 
-## Learn More
+This project is open-source and available under the **MIT License**.  
+🖼 Made with ❤️ by Irene Mukii
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
