@@ -1,18 +1,20 @@
 import axios from "axios";
 import { useRouter } from "next/router";
 import { useState } from "react";
+//import './envConfig.ts'
 
 const Login = ()=>{
     const [username, setUsername]= useState(null)
     const [password, setPassword]= useState(null)
     const [error, setError]= useState(false)
     const router = useRouter();
+    const NEXT_URL = process.env.NEXT_PUBLIC_URL
 
     const handleClick = async () => {
         try{
-            console.log({username,password}, `http://localhost:3000/api/products/`)
+            // console.log({username,password}, `${NEXT_URL}`)
 
-            await axios.post(`${process.env.NEXT_URL}api/login`, { username, password})
+            await axios.post(`${NEXT_URL}api/login`, { username, password})
             router.push('/admin')
         }catch(err){
             setError(true)

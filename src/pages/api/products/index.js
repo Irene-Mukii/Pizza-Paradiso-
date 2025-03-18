@@ -1,5 +1,6 @@
 import dbConnect from "util/mongo";
 import Product from "models/Product";
+//import './envConfig.ts'
 
 export default async function handler(req, res) {
     

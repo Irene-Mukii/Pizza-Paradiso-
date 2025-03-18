@@ -1,6 +1,9 @@
 import mongoose from 'mongoose'
+//import './envConfig.ts'
 
 const NEXTMONGO_URL = process.env.NEXTMONGO_URL
+const NEXTTOKEN = process.env.NEXTTOKEN
+console.log( NEXTMONGO_URL, NEXTTOKEN)
 
 if (!NEXTMONGO_URL) {
   throw new Error(
@@ -30,6 +33,7 @@ async function dbConnect() {
     }
 
     cached.promise = mongoose.connect(NEXTMONGO_URL, opts).then((mongoose) => {
+      console.log(mongoose)
       return mongoose
     })
   }

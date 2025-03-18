@@ -3,6 +3,7 @@ import axios from "axios";
 import {  useState } from "react";
 import { useDispatch } from "react-redux";
 import { addProduct } from "redux/cartSlice";
+//import './envConfig.ts'
 
 
 const Product = ({pizza}) => {
@@ -49,7 +50,7 @@ const Product = ({pizza}) => {
             </div>
             <div className="flex-1 py-28 ">
                 <h1 className="relative text-4xl font-medium pb-3">{pizza.title}</h1>
-                <span className="text-orange-600 text-2xl border-b-2 border-solid border-orange-600 font-normal relative">KSH {price}</span>
+                <span className="text-orange-600 text-2xl border-b-2 border-solid border-orange-600 font-normal relative">$ {price}</span>
                 <p className="relative py-5"> {pizza.desc}</p>
                 <h3 className=" pb-5 font-semibold text-slate-950 ">Choose your size</h3>
                 <div className=" flex justify-between w-2/5">
@@ -104,7 +105,7 @@ const Product = ({pizza}) => {
 
 export const getServerSideProps = async ({params}) => {
     console.log(params)
-    const res = await axios.get(`${process.env.NEXT_URL}api/products/${params.id}`);
+    const res = await axios.get(`${process.env.NEXT_PUBLIC_URL}api/products/${params.id}`);
     return {
       props: {
         pizza: res.data

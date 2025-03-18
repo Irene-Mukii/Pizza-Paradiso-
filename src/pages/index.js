@@ -7,6 +7,7 @@ import PizzaList from 'src/components/PizzaList.js'
 import { useState } from 'react'
 import AddButton from 'src/components/AddButton'
 import Add from 'src/components/Add'
+//import './envConfig.ts'
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -35,10 +36,12 @@ export const getServerSideProps = async (ctx) => {
   const myCookie = ctx.req?.cookies || '';
   let admin =false;
 
-  if(myCookie.token === process.env.NEXTTOKEN){
+  console.log(myCookie.token, process.env.NEXT_PUBLIC_TOKEN, ' PAGES INDEX ENV LOADS????')
+
+  if(myCookie.token === process.env.NEXT_PUBLIC_TOKEN){
     admin = true
   }
-  const res = await axios.get(process.env.NEXT_URL+'api/products');
+  const res = await axios.get('http://localhost:3000/api/products');
   return {
     props: {
       pizzaList: res.data,

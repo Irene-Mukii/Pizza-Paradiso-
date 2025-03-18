@@ -10,6 +10,7 @@ import { useRouter } from "next/router";
 import { reset } from "redux/cartSlice";
 import axios from "axios";
 import OrderDetail from "src/components/OrderDetail";
+//import './envConfig.ts'
 
 export default function Cart () {
     const cart = useSelector(state => state.cart );
@@ -29,10 +30,10 @@ export default function Cart () {
 
     const createOrder = async (data) => {
         try{             
-            const res = await axios.post(`${process.env.NEXT_URL}api/orders`, data)
+            const res = await axios.post(`${process.env.NEXT_PUBLIC_URL}api/orders`, data)
             console.log( res)
             
-            res.status && router.push(`${process.env.NEXT_URL}/orders/${res.data._id}`)
+            res.status && router.push(`${process.env.NEXT_PUBLIC_URL}/orders/${res.data._id}`)
             dispatch(reset())
         }catch(err){
             router.push(`/orders`)

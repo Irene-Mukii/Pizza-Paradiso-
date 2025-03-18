@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
+//import './envConfig.ts'
 
 const { default: Image } = require("next/image")
 
@@ -11,7 +12,7 @@ const { default: Image } = require("next/image")
 
     const handleDelete = async (id) => {
         try{
-            const res = await axios.delete(process.env.NEXT_URL +'api/products/'+id)
+            const res = await axios.delete(process.env.NEXT_PUBLIC_URL +'api/products/'+id)
             setPizzaList(pizzaList.filter(pizza=>pizza._id !== id ))
         }catch (err){
             console.log(err)
@@ -22,7 +23,7 @@ const { default: Image } = require("next/image")
         const item = orderList.filter(order=> order._id===id)[0];
         const currentStatus = item.status;
         try{
-            const res = await axios.put(process.env.NEXT_URL +'api/orders/'+id, {status: currentStatus+1 })
+            const res = await axios.put(process.env.NEXT_PUBLIC_URL +'api/orders/'+id, {status: currentStatus+1 })
             setOrderList([
                 res.data,
                 ...orderList.filter(order=> order._id !== id)
@@ -111,7 +112,7 @@ const { default: Image } = require("next/image")
  export const getServerSideProps = async (ctx)=>{
     const myCookie = ctx.req?.cookies || '';
 
-    if(myCookie.token !== process.env.NEXTTOKEN){
+    if(myCookie.token !== process.env.NEXT_PUBLIC_TOKEN){
         return {
             redirect:{
                 destination: '/admin/login',
@@ -120,8 +121,8 @@ const { default: Image } = require("next/image")
         
         }
     }
-     const productRes = await axios.get(process.env.NEXT_URL +'api/products')
-     const orderRes = await axios.get(process.env.NEXT_URL +'api/orders')
+     const productRes = await axios.get(process.env.NEXT_PUBLIC_URL +'api/products')
+     const orderRes = await axios.get(process.env.NEXT_PUBLIC_URL +'api/orders')
 
      return {
         props:{
